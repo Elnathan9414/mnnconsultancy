@@ -1,0 +1,125 @@
+.navbar {
+  position: fixed;
+  inset: 0 auto auto 0;
+  width: 100%;
+  z-index: 50;
+  background: transparent;
+  transition: background 0.28s ease, box-shadow 0.28s ease, border 0.28s ease;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(29, 78, 138, 0.16);
+  border-bottom: 1px solid rgba(29, 78, 138, 0.14);
+  backdrop-filter: blur(16px);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+}
+
+.brand {
+  font-family: var(--font-syne);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  color: var(--color-primary);
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.links a:hover,
+.links a:focus-visible {
+  color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.toggle {
+  display: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid rgba(29, 78, 138, 0.22);
+  background: rgba(243, 248, 255, 0.95);
+  border-radius: 0.9rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 1.3rem;
+  height: 2px;
+  background: var(--color-text);
+  transition: transform 0.2s ease;
+}
+
+.hamburger::before {
+  transform: translateY(-6px);
+}
+
+.hamburger::after {
+  transform: translateY(4px);
+}
+
+.mobileMenu {
+  display: none;
+  width: 100%;
+  background: rgba(243, 248, 255, 0.96);
+  border-top: 1px solid rgba(29, 78, 138, 0.14);
+  backdrop-filter: blur(16px);
+}
+
+.mobileMenu.open {
+  display: block;
+}
+
+.mobileMenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 1.5rem 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.mobileMenu a {
+  color: var(--color-primary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 860px) {
+  .links {
+    display: none;
+  }
+
+  .toggle {
+    display: flex;
+  }
+}
