@@ -59,37 +59,96 @@ export const SERVICES = [
 
 export default function Services() {
   return (
-    <section className={styles.section} id="services">
-      <div className={styles.inner}>
+    // <section className={styles.section} id="services">
+    //   <div className={styles.inner}>
 
-        <div className={styles.header}>
-          <span className={styles.eyebrow}>Expertise</span>
-          <h2 className={styles.title}>Ce que nous faisons pour vous</h2>
-          <p className={styles.subtitle}>
-            Une approche intégrée qui combine IA, data et créativité pour des résultats mesurables.
+    //     <div className={styles.header}>
+    //       <span className={styles.eyebrow}>Expertise</span>
+    //       <h2 className={styles.title}>Ce que nous faisons pour vous</h2>
+    //       <p className={styles.subtitle}>
+    //         Une approche intégrée qui combine IA, data et créativité pour des résultats mesurables.
+    //       </p>
+    //     </div>
+
+    //     {/* Grille de cards */}
+    //     <div className={styles.grid}>
+    //       {SERVICES.map((s) => (
+    //         <div
+    //           key={s.title}
+    //           className={`${styles.card} ${styles[`card--${s.color}`]}`}
+    //           style={{
+    //             backgroundImage: `linear-gradient(rgba(9, 5, 36, 0.72), rgba(9, 5, 36, 0.32)), url(${s.bg})`,
+    //           }}
+    //         >
+    //           <div className={styles.cardIcon}>{s.icon}</div>
+    //           <span className={styles.cardTag}>{s.tag}</span>
+    //           <h3 className={styles.cardTitle}>{s.title}</h3>
+    //           <p className={styles.cardDesc}>{s.desc}</p>
+    //           <div className={styles.cardArrow}>→</div>
+    //         </div>
+    //       ))}
+    //     </div>
+
+    //   </div>
+    // </section>
+    <section className="py-20 bg-[#05021a]" id="services">
+  <div className="max-w-7xl mx-auto px-6">
+
+    {/* Header */}
+    <div className="text-center mb-16">
+      <span className="inline-block text-sm uppercase tracking-widest text-purple-400 mb-4">
+        Expertise
+      </span>
+      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        Ce que nous faisons pour vous
+      </h2>
+      <p className="text-gray-400 max-w-2xl mx-auto">
+        Une approche intégrée qui combine IA, data et créativité pour des résultats mesurables.
+      </p>
+    </div>
+
+    {/* Grid */}
+    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      {SERVICES.map((s) => (
+        <div
+          key={s.title}
+          className="relative group rounded-2xl overflow-hidden p-6 min-h-[280px] flex flex-col justify-end bg-cover bg-center transition-transform duration-300 hover:-translate-y-2"
+          style={{
+            backgroundImage: `linear-gradient(rgba(9,5,36,0.75), rgba(9,5,36,0.35)), url(${s.bg})`,
+          }}
+        >
+          {/* Icon */}
+          <div className="absolute top-6 left-6 text-white text-2xl">
+            {s.icon}
+          </div>
+
+          {/* Tag */}
+          <span className="text-xs uppercase tracking-wide text-purple-300 mb-2">
+            {s.tag}
+          </span>
+
+          {/* Title */}
+          <h3 className="text-xl font-semibold text-white mb-2">
+            {s.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-gray-300 text-sm mb-4">
+            {s.desc}
           </p>
-        </div>
 
-        {/* Grille de cards */}
-        <div className={styles.grid}>
-          {SERVICES.map((s) => (
-            <div
-              key={s.title}
-              className={`${styles.card} ${styles[`card--${s.color}`]}`}
-              style={{
-                backgroundImage: `linear-gradient(rgba(9, 5, 36, 0.72), rgba(9, 5, 36, 0.32)), url(${s.bg})`,
-              }}
-            >
-              <div className={styles.cardIcon}>{s.icon}</div>
-              <span className={styles.cardTag}>{s.tag}</span>
-              <h3 className={styles.cardTitle}>{s.title}</h3>
-              <p className={styles.cardDesc}>{s.desc}</p>
-              <div className={styles.cardArrow}>→</div>
-            </div>
-          ))}
-        </div>
+          {/* Arrow */}
+          <div className="text-white text-lg transition-transform duration-300 group-hover:translate-x-2">
+            →
+          </div>
 
-      </div>
-    </section>
+          {/* Overlay hover effect */}
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
   );
 }

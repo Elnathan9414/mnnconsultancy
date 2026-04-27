@@ -5,10 +5,7 @@ import Link from 'next/link';
 import styles from './Hero.module.css';
 
 const HERO_IMAGES = [
-  {
-    url: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
-    label: 'Analyse de données',
-  },
+  
   {
     url: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200&q=80',
     label: 'Stratégie digitale',
@@ -110,60 +107,147 @@ export default function Hero() {
   }, [current]);
 
   return (
-    <section className='w-full'>
-      <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />
+    // <section className='w-full'>
+    //   <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />
 
-      <div className={styles.heroImages} aria-hidden="true">
-        {HERO_IMAGES.map((image, index) => (
-          <div
-            key={image.url}
-            className={`${styles.heroSlide} ${index === current ? styles.active : ''} ${index === prev && fading ? styles.prev : ''}`}
-            style={{ backgroundImage: `url(${image.url})` }}
-          />
-        ))}
-        <div className={styles.heroOverlay} />
-        <div className={styles.heroImageLabel}>{HERO_IMAGES[current].label}</div>
-      </div>
+    //   <div className={styles.heroImages} aria-hidden="true">
+    //     {HERO_IMAGES.map((image, index) => (
+    //       <div
+    //         key={image.url}
+    //         className={`${styles.heroSlide} ${index === current ? styles.active : ''} ${index === prev && fading ? styles.prev : ''}`}
+    //         style={{ backgroundImage: `url(${image.url})` }}
+    //       />
+    //     ))}
+    //     <div className={styles.heroOverlay} />
+    //     <div className={styles.heroImageLabel}>{HERO_IMAGES[current].label}</div>
+    //   </div>
 
-      <div className={styles.inner}>
-        <div className={styles.badge}>
-          <span className={styles.badgeDot} />
-          Agence IA & Communication digitale
+    //   <div className={styles.inner}>
+    //     <div className={styles.badge}>
+    //       <span className={styles.badgeDot} />
+    //       Agence IA & Communication digitale
+    //     </div>
+
+    //     <h1 className={styles.headline}>
+    //       Transformez vos données{' '}
+    //       <span className={styles.accent}>en décisions</span>{' '}
+    //       qui font la différence
+    //     </h1>
+
+    //     <p className={styles.sub}>
+    //       Axonova combine intelligence artificielle, analyse de données et
+    //       stratégie digitale pour accélérer la croissance de votre entreprise.
+    //     </p>
+
+    //     <div className={styles.actions}>
+    //       <Link href="#contact" className={styles.btnPrimary}>
+    //         Audit gratuit — 30 min
+    //       </Link>
+    //       <Link href="#realisations" className={styles.btnSecondary}>
+    //         Voir nos réalisations →
+    //       </Link>
+    //     </div>
+
+    //     <div className={styles.stats}>
+    //       {[
+    //         { num: '+120', label: 'Clients accompagnés' },
+    //         { num: '3×',   label: 'ROI moyen constaté' },
+    //         { num: '98%',  label: 'Satisfaction client' },
+    //       ].map((s) => (
+    //         <div key={s.label} className={styles.stat}>
+    //           <span className={styles.statNum}>{s.num}</span>
+    //           <span className={styles.statLabel}>{s.label}</span>
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </div>
+    // </section>
+    <section className=" w-full overflow-hidden bg-[#05021a]">
+
+  {/* Canvas */}
+  <canvas
+    ref={canvasRef}
+    className=" inset-0 w-full h-full"
+    aria-hidden="true"
+  />
+
+  {/* Background images */}
+  <div className="absolute inset-0 z-0" aria-hidden="true">
+    {HERO_IMAGES.map((image, index) => (
+      <div
+        key={image.url}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 
+          ${index === current ? 'opacity-100 z-10' : 'opacity-0'} 
+          ${index === prev && fading ? 'opacity-0' : ''}`}
+        style={{ backgroundImage: `url(${image.url})` }}
+      />
+    ))}
+
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-b from-[#05021a]/90 via-[#05021a]/70 to-[#05021a]" />
+
+    {/* Image label */}
+    <div className="absolute bottom-6 right-6 text-sm text-gray-300 z-20">
+      {HERO_IMAGES[current].label}
+    </div>
+  </div>
+
+  {/* Content */}
+  <div className="relative z-20 max-w-7xl mx-auto py-5">
+
+   
+
+    {/* Headline */}
+    <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-3xl mb-6">
+      Transformez vos données{' '}
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+        en décisions
+      </span>{' '}
+      qui font la différence
+    </h1>
+
+    {/* Sub */}
+    <p className="text-gray-300 max-w-2xl mb-10">
+      Axonova combine intelligence artificielle, analyse de données et
+      stratégie digitale pour accélérer la croissance de votre entreprise.
+    </p>
+
+    {/* Actions */}
+    <div className="flex flex-wrap gap-4 mb-16">
+      <Link
+        href="#contact"
+        className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium shadow-lg hover:opacity-90 transition"
+      >
+        Audit gratuit — 30 min
+      </Link>
+
+      <Link
+        href="#realisations"
+        className="px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition"
+      >
+        Voir nos réalisations →
+      </Link>
+    </div>
+
+    {/* Stats */}
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-xl">
+      {[
+        { num: '+120', label: 'Clients accompagnés' },
+        { num: '3×', label: 'ROI moyen constaté' },
+        { num: '98%', label: 'Satisfaction client' },
+      ].map((s) => (
+        <div key={s.label}>
+          <div className="text-2xl md:text-3xl font-bold text-white">
+            {s.num}
+          </div>
+          <div className="text-gray-400 text-sm">
+            {s.label}
+          </div>
         </div>
+      ))}
+    </div>
 
-        <h1 className={styles.headline}>
-          Transformez vos données{' '}
-          <span className={styles.accent}>en décisions</span>{' '}
-          qui font la différence
-        </h1>
-
-        <p className={styles.sub}>
-          Axonova combine intelligence artificielle, analyse de données et
-          stratégie digitale pour accélérer la croissance de votre entreprise.
-        </p>
-
-        <div className={styles.actions}>
-          <Link href="#contact" className={styles.btnPrimary}>
-            Audit gratuit — 30 min
-          </Link>
-          <Link href="#realisations" className={styles.btnSecondary}>
-            Voir nos réalisations →
-          </Link>
-        </div>
-
-        <div className={styles.stats}>
-          {[
-            { num: '+120', label: 'Clients accompagnés' },
-            { num: '3×',   label: 'ROI moyen constaté' },
-            { num: '98%',  label: 'Satisfaction client' },
-          ].map((s) => (
-            <div key={s.label} className={styles.stat}>
-              <span className={styles.statNum}>{s.num}</span>
-              <span className={styles.statLabel}>{s.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
   );
 }

@@ -1,6 +1,8 @@
 import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Missions from "./components/Missions";
+import Process from "./components/Process";
+import Realisations from "./components/Realisations";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       </main>
       <Services />
       <Missions />
+      <Process />
+      <Realisations />   
     </div>
   );
 }
