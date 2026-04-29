@@ -1,7 +1,7 @@
 'use client';
 
 import { SERVICES } from './Services';
-import styles from './Missions.module.css';
+
 
 const MISSION = {
   title: 'Notre mission opérationnelle',
@@ -66,7 +66,7 @@ export default function Missions() {
     //     </div>
     //   </div>
     // </section>
-    <section className="py-24 bg-[#05021a]" id="missions">
+    <section className="py-24 bg-[#F4F9FF]" id="missions">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Heading */}
@@ -74,10 +74,10 @@ export default function Missions() {
       <span className="text-sm uppercase tracking-widest text-purple-400 block mb-4">
         Missions
       </span>
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-slate-950 mb-4">
         {MISSION.title}
       </h2>
-      <p className="text-gray-400 max-w-2xl mx-auto">
+      <p className="text-slate-600 max-w-2xl mx-auto">
         {MISSION.subtitle}
       </p>
     </div>
@@ -86,29 +86,26 @@ export default function Missions() {
     <div className="grid lg:grid-cols-2 gap-10">
 
       {/* Mission Card */}
-      <article
-        className="relative rounded-2xl overflow-hidden p-8 flex flex-col justify-end min-h-[420px] bg-cover bg-center"
-        style={{
-          backgroundImage: `linear-gradient(rgba(9,5,36,0.75), rgba(9,5,36,0.95)), url(${MISSION.bg})`,
-        }}
-      >
+      <article className="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-sm shadow-slate-200/70">
         <div className="space-y-3">
-          <h3 className="text-2xl font-semibold text-white">
+          <h3 className="text-2xl font-semibold text-slate-950">
             La mission
           </h3>
 
-          <p className="text-gray-300">
+          <p className="text-slate-600 leading-8">
             {MISSION.description}
           </p>
 
-          <p className="text-gray-400 text-sm">
+          <p className="text-slate-500 text-sm leading-7">
             {MISSION.detail}
           </p>
 
-          <ul className="space-y-2 mt-4">
+          <ul className="space-y-3 mt-4">
             {MISSION.goals.map((goal) => (
-              <li key={goal} className="flex items-start gap-2 text-gray-300 text-sm">
-                <span className="text-purple-400 mt-1">✔</span>
+              <li key={goal} className="flex items-start gap-3 text-slate-600 text-sm">
+                <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-sky-600 text-xs font-semibold">
+                  ✓
+                </span>
                 {goal}
               </li>
             ))}
@@ -117,10 +114,10 @@ export default function Missions() {
       </article>
 
       {/* Services Summary */}
-      <aside className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6">
+      <aside className="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm shadow-slate-200/60">
         
         <div className="mb-6">
-          <span className="text-sm uppercase tracking-wide text-gray-400">
+          <span className="text-sm uppercase tracking-wide text-slate-500">
             Services mobilisés
           </span>
         </div>
@@ -129,17 +126,17 @@ export default function Missions() {
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition"
+              className="flex items-center gap-4 rounded-3xl border border-slate-200/80 bg-slate-50 p-4"
             >
-              <div className="text-xl text-white">
+              <div className="text-xl text-sky-600">
                 {service.icon}
               </div>
 
               <div>
-                <strong className="block text-sm text-purple-300">
+                <strong className="block text-sm text-slate-950">
                   {service.tag}
                 </strong>
-                <p className="text-gray-300 text-sm">
+                <p className="text-slate-600 text-sm">
                   {service.title}
                 </p>
               </div>

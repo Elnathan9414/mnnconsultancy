@@ -33,38 +33,38 @@ const REALISATIONS = [
 
 export default function Realisations() {
   return (
-    <section className="py-24 bg-[#05021a] text-white" id="realisations">
+    <section className="py-24 bg-[#F8FBFF] text-slate-900" id="realisations">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="inline-block text-sm uppercase tracking-widest text-purple-400 mb-4">
+          <span className="inline-block text-sm uppercase tracking-widest text-sky-600 mb-4">
             Réalisations
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-slate-950">
             Nos projets les plus impactants
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-slate-600 max-w-2xl mx-auto">
             Des solutions IA, data et digitales développées pour transformer les ambitions en résultats concrets.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           {REALISATIONS.map((item) => (
-            <article key={item.title} className="group overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-lg shadow-black/20 transition hover:-translate-y-1">
+            <article key={item.title} className="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
               <div
                 className="aspect-[4/3] bg-cover bg-center"
                 style={{ backgroundImage: `url(${item.image})` }}
               />
               <div className="p-6">
-                <span className="inline-flex items-center rounded-full bg-purple-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-purple-200">
+                <span className="inline-flex items-center rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-sky-600">
                   {item.tag}
                 </span>
-                <h3 className="mt-5 text-2xl font-semibold text-white">
+                <h3 className="mt-5 text-2xl font-semibold text-slate-950">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-sm leading-7 text-gray-300">
+                <p className="mt-4 text-sm leading-7 text-slate-600">
                   {item.excerpt}
                 </p>
-                <p className="mt-5 text-sm text-purple-300">
+                <p className="mt-5 text-sm text-slate-800 font-semibold">
                   {item.result}
                 </p>
               </div>

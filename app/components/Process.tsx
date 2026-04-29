@@ -108,18 +108,18 @@ export default function Process() {
     //     </div>
     //   </div>
     // </section>
- <section className="py-16 bg-[#05021a] text-white" id="process">
+ <section className="py-16 bg-[#F8FBFF] text-slate-900" id="process">
   <div className="max-w-6xl mx-auto px-6">
 
     {/* Header */}
     <div className="text-center mb-12">
-      <span className="text-xs uppercase tracking-widest text-purple-400 block mb-3">
+      <span className="text-xs uppercase tracking-widest text-sky-600 block mb-3">
         Process
       </span>
-      <h2 className="text-3xl md:text-4xl font-bold mb-3">
+      <h2 className="text-3xl md:text-4xl font-bold mb-3 text-slate-950">
         Une méthode efficace
       </h2>
-      <p className="text-gray-400 max-w-xl mx-auto text-sm">
+      <p className="text-slate-600 max-w-xl mx-auto text-sm">
         Un processus simple et structuré pour transformer rapidement vos idées en résultats.
       </p>
     </div>
@@ -131,19 +131,19 @@ export default function Process() {
         {PROCESS_STEPS.map((step, index) => (
           <div
             key={step.phase}
-            className="flex items-start gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition"
+            className="flex items-start gap-4 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1"
           >
             {/* Icon + number */}
-            <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/20 text-purple-300 text-lg">
+            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-sky-100 text-sky-600 text-lg">
               {step.icon || index + 1}
             </div>
 
             {/* Content */}
             <div>
-              <h3 className="text-base font-semibold">
+              <h3 className="text-base font-semibold text-slate-950">
                 {step.title}
               </h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-slate-600 text-sm leading-7">
                 {step.description}
               </p>
             </div>
@@ -152,38 +152,58 @@ export default function Process() {
       </div>
 
       {/* Right panel */}
-      <div className="space-y-4">
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
-          <h3 className="text-xl font-semibold mb-2">
-            Pourquoi ça fonctionne
-          </h3>
-          <p className="text-gray-400 text-sm">
-            Une approche orientée résultats, rapide à déployer et optimisée en continu.
-          </p>
-        </div>
+     {/* Right panel */}
+<div className="space-y-6">
 
-        <ul className="space-y-3">
-          {[
-            "Time-to-market réduit",
-            "Alignement des équipes",
-            "Optimisation continue",
-          ].map((item, i) => (
-            <li key={i} className="flex items-center gap-3 text-sm text-gray-300">
-              <span className="w-6 h-6 flex items-center justify-center rounded-full bg-purple-500/20 text-purple-300 text-xs">
-                ✓
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
+  {/* VIDEO */}
+  <div className="relative rounded-3xl overflow-hidden border border-slate-200 shadow-sm bg-black">
 
-        <a
-          href="#contact"
-          className="block text-center mt-4 px-5 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-sm font-medium hover:opacity-90 transition"
-        >
-          Lancer mon projet →
-        </a>
-      </div>
+    <video
+      src="/videos/mission.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-[260px] md:h-[320px] object-cover"
+    />
+
+  </div>
+
+  {/* TEXT CARD */}
+  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h3 className="text-xl font-semibold mb-2 text-slate-950">
+      Pourquoi ça fonctionne
+    </h3>
+    <p className="text-slate-600 text-sm leading-7">
+      Une approche orientée résultats, rapide à déployer et optimisée en continu.
+    </p>
+  </div>
+
+  {/* LIST */}
+  <ul className="space-y-3">
+    {[
+      "Time-to-market réduit",
+      "Alignement des équipes",
+      "Optimisation continue",
+    ].map((item, i) => (
+      <li key={i} className="flex items-center gap-3 text-sm text-slate-600">
+        <span className="w-6 h-6 flex items-center justify-center rounded-full bg-sky-100 text-sky-600 text-xs">
+          ✓
+        </span>
+        {item}
+      </li>
+    ))}
+  </ul>
+
+  {/* CTA */}
+  <a
+    href="#contact"
+    className="block text-center px-5 py-3 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-sm font-medium hover:opacity-90 transition"
+  >
+    Lancer mon projet →
+  </a>
+
+</div>
 
     </div>
 

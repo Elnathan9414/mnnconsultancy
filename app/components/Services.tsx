@@ -91,7 +91,7 @@ export default function Services() {
 
     //   </div>
     // </section>
-    <section className="py-20 bg-[#05021a]" id="services">
+    <section className="py-20 bg-[#F8FBFF]" id="services">
   <div className="max-w-7xl mx-auto px-6">
 
     {/* Header */}
@@ -99,10 +99,10 @@ export default function Services() {
       <span className="inline-block text-sm uppercase tracking-widest text-purple-400 mb-4">
         Expertise
       </span>
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-slate-950 mb-4">
         Ce que nous faisons pour vous
       </h2>
-      <p className="text-gray-400 max-w-2xl mx-auto">
+      <p className="text-slate-600 max-w-2xl mx-auto">
         Une approche intégrée qui combine IA, data et créativité pour des résultats mesurables.
       </p>
     </div>
@@ -112,38 +112,28 @@ export default function Services() {
       {SERVICES.map((s) => (
         <div
           key={s.title}
-          className="relative group rounded-2xl overflow-hidden p-6 min-h-[280px] flex flex-col justify-end bg-cover bg-center transition-transform duration-300 hover:-translate-y-2"
-          style={{
-            backgroundImage: `linear-gradient(rgba(9,5,36,0.75), rgba(9,5,36,0.35)), url(${s.bg})`,
-          }}
+          className="relative group overflow-hidden rounded-3xl border border-slate-200 bg-white p-8 min-h-[320px] shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md"
         >
-          {/* Icon */}
-          <div className="absolute top-6 left-6 text-white text-2xl">
-            {s.icon}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(56,189,248,0.12),transparent),radial-gradient(circle_at_bottom_right,rgba(124,58,237,0.08),transparent)] opacity-90" />
+          <div className="relative z-10 flex h-full flex-col justify-between">
+            <div>
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-sky-100 text-sky-600 mb-6">
+                {s.icon}
+              </div>
+              <span className="text-xs uppercase tracking-wide text-slate-500 mb-2 block">
+                {s.tag}
+              </span>
+              <h3 className="text-2xl font-semibold text-slate-950 mb-4">
+                {s.title}
+              </h3>
+              <p className="text-slate-600 text-sm leading-7">
+                {s.desc}
+              </p>
+            </div>
+            <div className="mt-8 text-slate-950 text-lg font-semibold transition-transform duration-300 group-hover:translate-x-1">
+              →
+            </div>
           </div>
-
-          {/* Tag */}
-          <span className="text-xs uppercase tracking-wide text-purple-300 mb-2">
-            {s.tag}
-          </span>
-
-          {/* Title */}
-          <h3 className="text-xl font-semibold text-white mb-2">
-            {s.title}
-          </h3>
-
-          {/* Description */}
-          <p className="text-gray-300 text-sm mb-4">
-            {s.desc}
-          </p>
-
-          {/* Arrow */}
-          <div className="text-white text-lg transition-transform duration-300 group-hover:translate-x-2">
-            →
-          </div>
-
-          {/* Overlay hover effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-300" />
         </div>
       ))}
     </div>

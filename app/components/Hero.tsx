@@ -162,12 +162,12 @@ export default function Hero() {
     //     </div>
     //   </div>
     // </section>
-    <section className=" w-full overflow-hidden bg-[#05021a]">
+    <section className="relative w-full overflow-hidden bg-[#F8FBFF]">
 
   {/* Canvas */}
   <canvas
     ref={canvasRef}
-    className=" inset-0 w-full h-full"
+    className="absolute inset-0 h-full w-full opacity-30"
     aria-hidden="true"
   />
 
@@ -184,7 +184,7 @@ export default function Hero() {
     ))}
 
     {/* Overlay */}
-    <div className="absolute inset-0 bg-gradient-to-b from-[#05021a]/90 via-[#05021a]/70 to-[#05021a]" />
+    <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-slate-100/80 to-[#F8FBFF]" />
 
     {/* Image label */}
     <div className="absolute bottom-6 right-6 text-sm text-gray-300 z-20">
@@ -193,22 +193,19 @@ export default function Hero() {
   </div>
 
   {/* Content */}
-  <div className="relative z-20 max-w-7xl mx-auto py-5">
-
-   
+  <div className="relative z-20 mx-auto max-w-6xl px-6 py-24 sm:px-8">
 
     {/* Headline */}
-    <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight max-w-3xl mb-6">
+    <h1 className="text-4xl md:text-6xl font-bold text-slate-950 leading-tight max-w-3xl mb-6">
       Transformez vos données{' '}
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-cyan-500">
         en décisions
       </span>{' '}
       qui font la différence
     </h1>
 
     {/* Sub */}
-    <p className="text-gray-300 max-w-2xl mb-10">
-      Axonova combine intelligence artificielle, analyse de données et
+    <p className="text-slate-600 max-w-2xl mb-10 text-lg">
       stratégie digitale pour accélérer la croissance de votre entreprise.
     </p>
 
@@ -216,31 +213,31 @@ export default function Hero() {
     <div className="flex flex-wrap gap-4 mb-16">
       <Link
         href="#contact"
-        className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-medium shadow-lg hover:opacity-90 transition"
+        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-sky-600 to-cyan-500 px-6 py-3 text-lg font-semibold text-white shadow-lg shadow-sky-300/30 transition duration-300 hover:-translate-y-0.5"
       >
         Audit gratuit — 30 min
       </Link>
 
       <Link
         href="#realisations"
-        className="px-6 py-3 border border-white/20 text-white rounded-lg hover:bg-white/10 transition"
+        className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-6 py-3 text-lg font-semibold text-slate-900 transition duration-300 hover:bg-slate-50"
       >
         Voir nos réalisations →
       </Link>
     </div>
 
     {/* Stats */}
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-xl">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-xl">
       {[
         { num: '+120', label: 'Clients accompagnés' },
         { num: '3×', label: 'ROI moyen constaté' },
         { num: '98%', label: 'Satisfaction client' },
       ].map((s) => (
-        <div key={s.label}>
-          <div className="text-2xl md:text-3xl font-bold text-white">
+        <div key={s.label} className="rounded-3xl border border-slate-200/80 bg-slate-50 p-5">
+          <div className="text-3xl font-bold text-slate-950">
             {s.num}
           </div>
-          <div className="text-gray-400 text-sm">
+          <div className="mt-2 text-sm text-slate-600">
             {s.label}
           </div>
         </div>
