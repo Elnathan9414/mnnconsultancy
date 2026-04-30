@@ -1,10 +1,12 @@
 import Hero from "./components/Hero";
 import Services from "./components/Services";
+import About from "./components/About";
 import Missions from "./components/Missions";
 import Process from "./components/Process";
 import Realisations from "./components/Realisations";
+import Contact from "./components/Contact";
 import Testimonial from "./components/Testimonial";
-import FinalCTA from "./components/Cta";
+
 
 export default function Home() {
   return (
@@ -13,11 +15,12 @@ export default function Home() {
         <Hero />
       </main>
       <Services />
+      <About />
       <Missions />
       <Process />
       <Realisations />
-      <FinalCTA />
       <Testimonial />
+      <Contact />
     </div>
   );
 }

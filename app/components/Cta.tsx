@@ -1,6 +1,6 @@
 export default function FinalCTA() {
   return (
-    <section className="relative overflow-hidden bg-[#F8FBFF] text-slate-900 w-full" id="contact">
+    <section className="relative overflow-hidden bg-[#F8FBFF] text-slate-900 w-full py-5">
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.14),transparent_25%),radial-gradient(circle_at_bottom_left,rgba(125,211,252,0.09),transparent_20%)] pointer-events-none" />
       <div className="absolute top-[-180px] right-[-180px] w-[520px] h-[520px] rounded-full bg-sky-400/20 blur-[130px]" />

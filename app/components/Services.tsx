@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import styles from './Services.module.css';
 
@@ -16,6 +16,62 @@ export const SERVICES = [
     desc: 'Chatbots, génération de contenu, pipelines IA et outils sur mesure pour automatiser vos processus métier.',
     bg: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80',
     color: 'violet',
+  },
+ 
+
+{
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M4 7h16M4 12h10M4 17h14" />
+        <path d="M8 7l4 5-4 5" />
+      </svg>
+    ),
+    tag: 'CRM & Sales',
+    title: 'Gestion des leads & CRM',
+    desc: 'Mise en place de systèmes de gestion des prospects, nurturing automatisé et pipelines de vente performants.',
+    bg: 'https://images.unsplash.com/photo-1556155092-8707de31f9c4?w=1200&q=80',
+    color: 'indigo',
+  },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 4v16M8 8h8M8 16h8" />
+        <circle cx="12" cy="5" r="2" />
+      </svg>
+    ),
+    tag: 'IA Avancée',
+    title: 'IA métier & assistants intelligents',
+    desc: 'Développement d’assistants IA internes pour automatiser les tâches métier, améliorer la productivité et soutenir la prise de décision.',
+    bg: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+    color: 'violet',
+  },
+
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M4 19h16M4 14h9M4 9h14M4 4h6" />
+        <path d="M15 4v15" />
+      </svg>
+    ),
+    tag: 'Data Avancée',
+    title: 'Tracking & performance analytics',
+    desc: 'Suivi avancé des performances, intégration des données et dashboards pour piloter efficacement votre croissance.',
+    bg: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80',
+    color: 'cyan',
+  },
+
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M4 12h16M4 7h16M4 17h10" />
+        <path d="M8 7l4 5-4 5" />
+      </svg>
+    ),
+    tag: 'Growth',
+    title: 'Stratégie d’acquisition & scaling',
+    desc: 'Mise en place de stratégies pour attirer plus de clients, scaler votre activité et maximiser votre retour sur investissement.',
+    bg: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=80',
+    color: 'emerald',
   },
   {
     icon: (
